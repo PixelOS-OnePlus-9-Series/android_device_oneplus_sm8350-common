@@ -3,13 +3,13 @@ package com.oplus.content;
 import android.os.RemoteException;
 
 public class OplusFeatureConfigManager {
-    public static OplusFeatureConfigManager sOplusFeatureConfigManager = null;
+    private static OplusFeatureConfigManager sInstance = null;
 
     public static OplusFeatureConfigManager getInstance() {
-        if (sOplusFeatureConfigManager == null) {
-            sOplusFeatureConfigManager = new OplusFeatureConfigManager();
+        if (sInstance == null) {
+            sInstance = new OplusFeatureConfigManager();
         }
-        return sOplusFeatureConfigManager;
+        return sInstance;
     }
 
     public boolean hasFeature(String name) throws RemoteException {
